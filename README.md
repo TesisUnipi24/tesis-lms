@@ -28,8 +28,8 @@ This project uses a monorepo structure with both frontend and backend code in a 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/lms-project.git
-cd lms-project
+git clone https://github.com/yourusername/tesis-lms.git
+cd tesis-lms
 ```
 
 2. Install dependencies
@@ -68,7 +68,7 @@ npm start
 
 ## Contributing
 
-[Your contribution guidelines]
+-
 
 ## License
 
