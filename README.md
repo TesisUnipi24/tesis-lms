@@ -28,7 +28,7 @@ This project uses a monorepo structure with both frontend and backend code in a 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/tesis-lms.git
+git clone https://github.com/TesisUnipi24/tesis-lms.git
 cd tesis-lms
 ```
 
