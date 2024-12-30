@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
 
 .input-group input:focus~label,
 .input-group input:valid~label {
   top: 0;
   background-color: white;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #000;
+  padding: 6px;
 }
 
 /* :root {

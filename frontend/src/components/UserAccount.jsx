@@ -1,36 +1,40 @@
 import { Link } from "react-router-dom";
+import { FaGear } from "react-icons/fa6";
+import { FiLogOut } from "react-icons/fi";
 
 const UserAccount = () => {
   return (
-    <div
-      id='dropdown-menu'
-      className='absolute right-0 w-60 rounded-md shadow-md bg-white z-10'
+    <ul
+      tabIndex={0}
+      className='menu menu-sm dropdown-content bg-base-100 rounded-md mt-3 w-60 p-2 shadow divide-y'
     >
-      <div className='py-2 p-2 divide-y'>
+      <li>
         <div>
-          <a className='flex flex-col rounded-md px-4 py-2 text-sm'>
+          <div className='flex flex-col rounded-md cursor'>
             <p className='font-semibold'>Mohamad Rizal Prasetyo</p>
             <p>rizalmohamad740@gmai.com</p>
-          </a>
+          </div>
         </div>
-        <div>
-          <Link
-            to='/'
-            className='flex rounded-md px-4 py-1 my-2 text-sm text-gray-700 hover:bg-blue-100 cursor-pointer'
-          >
-            Profile
-          </Link>
-        </div>
-        <div>
-          <Link
-            to='/'
-            className='flex rounded-md px-4 py-1 my-2 text-sm text-gray-700 hover:bg-blue-100 cursor-pointer'
-          >
-            Logout
-          </Link>
-        </div>
-      </div>
-    </div>
+      </li>
+      <li>
+        <Link
+          to=''
+          className='flex py-1 my-2'
+        >
+          <FaGear />
+          Settings
+        </Link>
+      </li>
+      <li>
+        <Link
+          to=''
+          className='flex py-1 my-2'
+        >
+          <FiLogOut />
+          Logout
+        </Link>
+      </li>
+    </ul>
   );
 };
 

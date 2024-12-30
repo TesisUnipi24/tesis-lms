@@ -1,12 +1,11 @@
-const Button = ({ classname, children }) => {
+const Button = ({ classname, type, children }) => {
   return (
-    <div className='mt-5'>
       <button
-        className={`${classname} py-2 rounded-md transition duration-300`}
+        className={`${classname} text-base btn transition duration-300 h-11 min-h-11`}
+        type={type}
       >
         {children}
       </button>
-    </div>
   );
 };
 

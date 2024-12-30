@@ -1,25 +1,34 @@
-import { Link } from "react-router-dom";
-import Button from "./Button";
+import { PiVideoFill } from "react-icons/pi";
 
-const Card = ({ src, title, description, to, btnText }) => {
+const CardModul = ({ title, content }) => {
   return (
-    <Link to={to}>
-      <div className='max-w-sm shadow-md rounded-lg overflow-hidden hover:-translate-y-6 duration-1000'>
-        <img
-          src={src}
-          alt='image'
-          className='w-full h-44 object-cover'
-        />
-        <div className='p-4'>
-          <h5 className='text-xl font-semibold mb-2'>{title}</h5>
-          <p className='text-gray-700 mb-4'>{description}</p>
-          <Button classname='w-full text-white bg-teal-600 hover:bg-teal-700'>
-            {btnText}
-          </Button>
-        </div>
+    <div className='collapse collapse-arrow rounded-md'>
+      <input
+        type='checkbox'
+        name='my-accordion-2'
+        defaultChecked
+      />
+      <div className='collapse-title text-md font-medium border bg-teal-500 text-white'>
+        {title}
       </div>
-    </Link>
+      <div className='collapse-content p-0 mt-3'>
+        <ul className='divide-y px-7'>
+          {content.map((item, index) => (
+            <li
+              key={index}
+              className='p-4 flex items-center gap-5 hover:bg-blue-50 duration-300 cursor-pointer'
+            >
+              <PiVideoFill
+                color='teal'
+                className='text-xl'
+              />
+              <p>{item}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 
-export default Card;
+export default CardModul;

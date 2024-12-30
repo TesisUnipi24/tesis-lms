@@ -8,7 +8,9 @@ import Quiz from "./pages/Quiz";
 import Assignment from "./pages/Assignment";
 import Chat from "./pages/Chat";
 import Progres from "./pages/Progres";
-import Notifikasi from "./pages/Notifikasi";;
+import User from "./pages/User";
+import Modul from "./pages/Modul";
+import Course from "./pages/Course";
 
 function App() {
   return (
@@ -20,12 +22,16 @@ function App() {
 
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="learning" element={<Learning />} />
+          <Route path="learn">
+            <Route index element={<Learning />} />
+            <Route path="course" element={<Course />} />
+            <Route path="modul" element={<Modul />} />
+          </Route>
           <Route path="quiz" element={<Quiz />} />
           <Route path="submission" element={<Assignment />} />
           <Route path="diskusi" element={<Chat />} />
           <Route path="progres" element={<Progres />} />
-          <Route path="notifikasi" element={<Notifikasi />} />
+          <Route path="user" element={<User />} />
         </Route>
       </Routes>
     </BrowserRouter>

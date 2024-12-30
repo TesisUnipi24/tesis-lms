@@ -1,30 +1,12 @@
-import {
-  FaHome,
-  FaBook,
-  FaBookOpen,
-  FaBookmark,
-  FaComment,
-  FaMedal,
-  FaBell,
-} from "react-icons/fa";
 import logo from "../assets/react.svg";
 import { NavLink } from "react-router-dom";
 import Button from "../components/Button";
+import { menus } from "../data/data";
 
 const Sidebar = () => {
-  const menu = [
-    { title: "Dashboard", icon: <FaHome />, path: "/" },
-    { title: "Learning", icon: <FaBook />, path: "/learning" },
-    { title: "Quizzes", icon: <FaBookOpen />, path: "/quiz", gap: true },
-    { title: "Submission ", icon: <FaBookmark />, path: "/submission" },
-    { title: "Diskusi", icon: <FaComment />, path: "/diskusi" },
-    { title: "Progress", icon: <FaMedal />, path: "/progres" },
-    { title: "Notifikasi", icon: <FaBell />, path: "/notifikasi", gap: true },
-  ];
-
   return (
-    <aside className='hidden lg:block shadow-md'>
-      <div className='flex flex-col justify-between w-60 bg-white h-screen p-5 relative border-r-2'>
+    <aside className='hidden lg:block shadow-md fixed'>
+      <div className='flex flex-col justify-between w-64 bg-white h-screen p-5 relative border-r-2'>
         <div className='flex gap-2 items-center'>
           <img
             src={logo}
@@ -35,18 +17,18 @@ const Sidebar = () => {
           </h1>
         </div>
         <ul className='pt-6 h-full'>
-          {menu.map((item, index) => (
+          {menus.map((item, index) => (
             <li
               key={index}
-              className={`flex items-center rounded-md p-0 cursor-pointer transition duration-500 ease-in-out text-slate-700 hover:bg-blue-100 text-[17px]
+              className={`text-base flex items-center rounded-md p-0 cursor-pointer transition duration-500 ease-in-out hover:bg-blue-50
               ${item.gap ? "mt-9" : "mt-2"}`}
             >
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "flex items-center gap-4 bg-teal-500 text-white w-full h-full rounded-md p-2"
-                    : "flex items-center gap-4 p-2"
+                    ? "flex items-center gap-4 bg-teal-500 text-white w-full h-full rounded-md px-3 py-2"
+                    : "flex items-center gap-4 py-2 px-3"
                 }
               >
                 <div className='text-lg'>{item.icon}</div>

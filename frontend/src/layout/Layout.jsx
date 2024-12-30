@@ -5,12 +5,14 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <main className='flex min-h-screen bg-gray-50'>
+    <main className='text-sm text-gray-600 flex min-h-screen'>
       <Sidebar />
-      <div className='flex flex-col justify-between w-full'>
+      <div className='lg:ml-64 w-full'>
         <Header />
-        <Outlet />
-        <Footer />
+        <section className="mt-16 flex flex-col justify-between h-full bg-slate-100 border-none">
+          <Outlet />
+          <Footer />
+        </section>
       </div>
     </main>
   );
